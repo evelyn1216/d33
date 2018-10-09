@@ -8,9 +8,10 @@
     <script>
         d3.csv("/data.csv/employees.csv", function(data) {
             console.log(data);
-            for (var i = 0; i < data.length; i++) {
-                console.log(data[i].Name);
-                console.log(data[i].Age);
+
+            for (var i = 0; i < data.length;i =i + 2) {
+                console.log(data[i].Q);
+                console.log(data[i].A);
             }
         });
         </script>
