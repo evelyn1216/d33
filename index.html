@@ -7,10 +7,15 @@
 
 <script>
 d3.json("users.json", function(error, data) {
+    var result = [];
+    for(var i =0;i<2;i++){
+
+        result.push(data[i]);
+    }
     
     d3.select("body")
         .selectAll("p")
-        .data(data)
+        .data(result)
         .enter()
         .append("p")
         .text(function(d) {
