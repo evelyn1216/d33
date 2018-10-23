@@ -6,23 +6,22 @@
 <body>
 
 <script>
-d3.json("users.json", function(error, data) {
-    var result = [];
-    for(var i =0;i<2;i++){
+                var width = 500;
+                var height = 500;
 
-        result.push(data[i]);
-    }
-    
-    d3.select("body")
-        .selectAll("p")
-        .data(result)
-        .enter()
-        .append("p")
-        .text(function(d) {
-            return d.name + ", " + d.location;
-        });
+                //Create SVG element
+                var svg = d3.select("body")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
 
-});
+                //Create line element inside SVG
+    svg.append("line")
+       .attr("x1", 100)
+       .attr("x2", 500)
+       .attr("y1", 50)
+       .attr("y2", 50)
+       .attr("stroke", "black")
 </script>
 </body>
 </html>
